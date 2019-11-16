@@ -1,0 +1,506 @@
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////       TASK_01        ///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	//Declaring Variable:
+	int i, j, k;
+	int const r1 = 2, c1 = 3, r2 = 3, c2 = 4;
+
+	//Declaring Arrays:	
+	int a[r1][c1], b[r2][c2], c[r1][c2], sum = 0;
+
+	//The Whole Program is Skipped If Column1 is Not Equal to Row2: 
+	if (c1 != r2)
+	{
+		cout << "Matrix Multiplication is not Possible" << endl;
+		return 0;
+	}
+
+	cout << "\nEnter Values Of Matrix A:" << "\n\n";
+
+	//Taking Input Of Matrix A Values from User:
+	for (i = 0; i<r1; i++)
+	{
+		for (j = 0; j<c1; j++)
+		{
+			cout << "Enter[" << i << "][" << j << "] :";
+			cin >> a[i][j];
+		}
+	}
+
+	cout << "\nEnter Values Of Matrix B:" << "\n\n";
+
+	//Taking Input Of Matrix B Values from User:
+	for (i = 0; i<r2; i++)
+	{
+		for (j = 0; j<c2; j++)
+		{
+			cout << "Enter[" << i << "][" << j << "] :";
+			cin >> b[i][j];
+		}
+	}
+	
+		/*Apply Nested For loop To calculate Multiplication Of
+		Matrix A & B And Store It In Matrix C:*/
+
+		for (i = 0; i<r1; i++)
+		{
+			for (j = 0; j<c2; j++)
+			{
+				for (k = 0; k<r2; k++)
+				{
+					sum += a[i][k] * b[k][j];
+				}
+				c[i][j] = sum;
+				sum = 0;
+			}
+		}
+
+	cout << "\n Matrix A" << endl << "\n";
+	//Prints Matrix A:
+	for (i = 0; i<r1; i++)
+	{
+		cout << "\t";
+
+		for (j = 0; j<c1; j++)
+		{
+			cout << setw(4) << a[i][j];
+		}
+		cout << endl;
+	}
+
+	cout << "\n Matrix B" << endl << "\n";
+
+	//Prints Matrix B:
+	for (i = 0; i<r2; i++)
+	{
+		cout << "\t";
+
+		for (j = 0; j<c2; j++)
+		{
+			cout << setw(4) << b[i][j];
+		}
+		cout << endl;
+	}
+
+	cout << "\nMultiplication Of Matrix A & B:" << endl;
+	cout << "\n Matrix C" << endl << "\n";
+
+	//Prints Multiplication Of Matrix A & Matrix B:
+	for (i = 0; i<r1; i++)
+	{
+		cout << "\t";
+
+		for (j = 0; j<c2; j++)
+		{
+			cout << setw(5) << c[i][j];
+		}
+		cout << endl;
+	}
+	system("pause");
+	return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////       TASK_02        ///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+/*
+#include<iostream>
+using namespace std;
+void Part_A(int A[], int B[], int X, int Y);
+void Part_B(int A[], int B[]);
+
+int main()
+{
+	int X = 2, Y = -5, A[] = { 16,-6,7 }, B[] = { 4,2,-3 };
+
+	Part_A(A, B, X, Y);
+
+	Part_B(A, B);
+
+	system("pause");
+
+	return 0;
+}
+
+void Part_A(int A[], int B[], int X, int Y)
+{
+	int temp[3] = { 0 };
+
+	for (int i = 0; i<3; i++)
+	{
+		A[i] *= X;
+		B[i] *= Y;
+	}
+
+	cout << "The [Array(A)*X] answer is:" << endl;
+
+	for (int i = 0; i<3; i++)
+
+		cout << A[i] << endl;
+
+	cout << "\nThe [Array(B)*Y] answer is:" << endl;
+
+	for (int i = 0; i<3; i++)
+
+		cout << B[i] << endl;
+
+
+	for (int i = 0; i<3; i++)
+	{
+		temp[i] += A[i];
+		temp[i] += B[i];
+	}
+
+	cout << "\n\n[(Array(A)*X)+(Array(B)*Y)] answer is: " << endl;
+
+	for (int i = 0; i<3; i++)
+
+		cout << temp[i] << endl;
+
+}
+
+void Part_B(int A[], int B[])
+{
+	int temp2[3] = { 0 };
+
+	for (int i = 0; i<3; i++)
+	{
+		A[i] *= B[i];
+
+		temp2[i] += A[i];
+	}
+
+	cout << "\n\nArray(A)*Array(B) answer is: " << endl;
+
+	for (int i = 0; i<3; i++)
+
+		cout << temp2[i] << endl;
+}*/
+
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////       TASK_03        ///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+/*
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a, arr1[5], loc;
+
+	cout << "Enter The arr1 values" << endl;
+	for (int i = 0; i<5; i++)
+	{
+		cin >> arr1[i];
+	}
+
+	cout << "\nEnter the value to find it's location from the above array:" << endl;
+	cin >> a;
+
+	for (int i = 0; i<5; i++)
+	{
+		if (arr1[i] == a)
+		{
+			loc = i;
+			cout << "\nLocation of the Resultant Value (" << a << ") is: " << loc << endl;
+			break;
+		}
+	}
+	cout << "\n\n";
+
+	system("pause");
+	return 0;
+}*/
+
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////       TASK_04        ///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+/*
+#include<iostream>
+using namespace std;
+int Binary_ser(int a[], int size, int value);
+
+int main()
+{
+
+	int const size = 10;
+	int a[size] = { 11,22,33,36,45,52,57,60,64,78 }, b[size] = { 0 }, temp = 0, x = 36, y = 45, z = 52;
+
+	cout << "Array Elements:" << endl;
+
+	for (int i = 0; i<size; i++)
+
+		cout << "[" << a[i] << "],";
+
+	cout << "\n\n";
+
+	cout << "\nThe Value at the Location '";
+	Binary_ser(a, size, x);
+	cout << "' is: " << x;
+
+
+	cout << "\nThe Value at the Location '";
+	Binary_ser(a, size, y);
+	cout << "' is: " << y;
+
+	cout << "\nThe Value at the Location '";
+	Binary_ser(a, size, z);
+	cout << "' is: " << z << "\n\n";
+
+	system("pause");
+	return 0;
+
+}
+
+int Binary_ser(int a[], int size, int value)
+{
+	int lb = 0, ub = size - 1, mid, position = 0;
+
+	bool found = false;
+
+	while (!found && lb <= ub)
+	{
+		mid = (lb + ub) / 2;
+		if (a[mid] == value)
+		{
+			found = true;
+			position = mid;
+		}
+		else if (a[mid]>value)
+
+			ub = mid - 1;
+
+		else
+
+			lb = mid + 1;
+	}
+	return position;
+}*/
+
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////       TASK_05        ///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+/*
+#include<iostream>
+using namespace std;
+int Binary_ser(int a[], int size, int value);
+void Inser_Sort(int a[], int size);
+void bubble(int a[], int size);
+void selection_sort(int a[], int size);
+
+
+int main()
+{
+
+	int const size = 10;
+	int a[size] = { 10,4,11,25,19,33,77,52,1,63 }, b[size] = { 0 }, temp = 0, x = 52, y = 33;
+
+	cout << "UnSorted Array:" << endl;
+
+	for (int i = 0; i<size; i++)
+
+		cout << "[" << a[i] << "],";
+
+	cout << "\n\n";
+
+	bubble(a, size);
+
+	cout << "\nThe Position of the value '" << x << "' is: ";
+	Binary_ser(a, size, x);
+
+	cout << "\n\nThe Position of the value '" << y << "' is: ";
+	Binary_ser(a, size, y);
+
+	system("pause");
+	return 0;
+
+}
+
+void Inser_Sort(int a[], int size)
+{
+	int temp = 0;
+
+	for (int i = 0; i<size; i++)
+	{
+		for (int j = i; j >= 1; j--)
+		{
+			if (a[j]<a[j - 1])
+			{
+				temp = a[j];
+
+				a[j] = a[j - 1];
+
+				a[j - 1] = temp;
+			}
+		}
+	}
+	cout << "\nSorted Array:" << endl;
+	for (int i = 0; i<size; i++)
+
+		cout << "[" << a[i] << "],";
+
+	cout << "\n\n";
+
+}
+
+
+int Binary_ser(int a[], int size, int value)
+{
+	int counter = 0, lb = 0, ub = size - 1, mid, position = 0;
+
+	bool found = false;
+
+	while (!found && lb <= ub)
+	{
+		mid = (lb + ub) / 2;
+		if (a[mid] == value)
+		{
+			found = true;
+			position = mid;
+		}
+		else if (a[mid]>value)
+
+			ub = mid - 1;
+
+		else
+
+			lb = mid + 1;
+		counter++;
+	}
+	return position;
+}
+
+void bubble(int a[], int size)
+{
+	int temp;
+
+	for (int i = 0; i<size; i++)
+	{
+		for (int j = 0; j<size - 1; j++)
+		{
+			if (a[j]>a[j + 1])
+			{
+				temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
+			}
+		}
+	}
+
+	cout << "\nBubble sort";
+	for (int i = 0; i<size; i++)
+
+		cout << "[" << a[i] << "],";
+}
+
+void selection_sort(int a[], int size)
+{
+	int temp, loc, min;
+
+	for (int i = 0; i<size; i++)
+	{
+		min = a[i];
+		loc = i;
+		for (int j = i + 1; j<size; j++)
+		{
+			if (min>a[j])
+			{
+				min = a[j];
+				loc = j;
+			}
+		}
+		temp = a[i];
+		a[i] = a[loc];
+		a[loc] = temp;
+	}
+
+	cout << "\nSelection sort:";
+	for (int i = 0; i<size; i++)
+
+		cout << "[" << a[i] << "],";
+}*/
+
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////       TASK_06        ///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+/*
+#include<iostream>
+using namespace std;
+int Binary_ser(int a[], int size, int value);
+void delete1(int a[], int size, int loc);
+int main()
+{
+
+	int const size = 10;
+	int a[size] = { 11,22,33,36,45,52,57,60,64,78 }, b[size] = { 0 }, x = 45, y = 78, temp1 = 0, temp2 = 0;
+
+	cout << "Array Elements:" << endl;
+
+	for (int i = 0; i<size; i++)
+
+		cout << "[" << a[i] << "],";
+
+	cout << "\n\n";
+
+	temp1 = Binary_ser(a, size, x);
+
+	cout << "\nThe Position of the value '" << x << "' is: " << temp1;
+
+	temp2 = Binary_ser(a, size, y);
+
+	cout << "\n\nThe Position of the value '" << y << "' is: " << temp2;
+
+	delete1(a, size, temp1);
+
+	delete1(a, size - 1, temp2);
+
+	system("pause");
+
+	return 0;
+
+}
+
+int Binary_ser(int a[], int size, int value)
+{
+	int lb = 0, ub = size - 1, mid, position = 0;
+
+	bool found = false;
+
+	while (!found && lb <= ub)
+	{
+		mid = (lb + ub) / 2;
+		if (a[mid] == value)
+		{
+			found = true;
+			position = mid;
+		}
+		else if (a[mid]>value)
+
+			ub = mid - 1;
+
+		else
+
+			lb = mid + 1;
+	}
+	return position;
+}
+
+void delete1(int a[], int size, int loc)
+{
+	for (int j = loc; j<size; j++)
+
+		a[j] = a[j + 1];
+
+	cout << "\n\nArray with Deleted value: " << endl;
+
+	for (int i = 0; i<size - 1; i++)
+
+		cout << "[" << a[i] << "],";
+
+	cout << "\n\n";
+}
+*/

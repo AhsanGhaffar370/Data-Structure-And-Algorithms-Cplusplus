@@ -1,0 +1,24 @@
+﻿Build started 4/2/2018 12:36:26 AM.
+     1>Project "H:\DS_C++\LAB SC\Lab_03\Lab_03\Lab_03.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Task_01.cpp Task_02.cpp Task_03.cpp Task_04.cpp Task_05.cpp Task_06.cpp
+         Task_06.cpp
+         Task_05.cpp
+         Task_04.cpp
+         Task_03.cpp
+         Task_02.cpp
+         Task_01.cpp
+         Generating Code...
+       Link:
+         C:\Program Files\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\DS_C++\LAB SC\Lab_03\Debug\Lab_03.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"H:\DS_C++\LAB SC\Lab_03\Debug\Lab_03.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"H:\DS_C++\LAB SC\Lab_03\Debug\Lab_03.lib" /MACHINE:X86 Debug\Task_01.obj
+         Debug\Task_02.obj
+         Debug\Task_03.obj
+         Debug\Task_04.obj
+         Debug\Task_05.obj
+         Debug\Task_06.obj
+         Lab_03.vcxproj -> H:\DS_C++\LAB SC\Lab_03\Debug\Lab_03.exe
+     1>Done Building Project "H:\DS_C++\LAB SC\Lab_03\Lab_03\Lab_03.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.54

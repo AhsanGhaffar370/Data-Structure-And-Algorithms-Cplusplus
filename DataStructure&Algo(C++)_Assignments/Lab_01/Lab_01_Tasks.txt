@@ -1,0 +1,197 @@
+///////////////////////////////////////////////////////////
+//////////////      TASK_01         //////////////////////
+/////////////////////////////////////////////////////////
+
+#include <iostream>
+using namespace std;
+
+//create a function to Print the Smallest Number:
+int smallest(int a, int b, int c)
+{
+
+	//Use if else condition to return the smallest one:
+	if (a<b && a<c)
+	{
+		return a;
+	}
+
+	else if (b<a && b<c)
+	{
+		return b;
+	}
+
+	else if (c<a && c<b)
+	{
+		return c;
+	}
+}
+int main()
+{
+	//Declaring variables:
+	int a, b, c;
+
+	//Taking Input from user:
+	cout << "Enter any three Integers" << endl;
+
+	cin >> a >> b >> c;
+
+	cout << "\nThe Smallest Number is: ";
+
+	cout << smallest(a, b, c) << endl << "\n";
+
+
+	system("pause");
+	return 0;
+
+}
+
+///////////////////////////////////////////////////////////
+//////////////      TASK_02         //////////////////////
+/////////////////////////////////////////////////////////
+#include <iostream>
+using namespace std;
+
+//create a function to print an array in ascending order:
+void Array_Sort(int arr[])
+{
+	int temp;
+
+	//Use nested for loop to set an array in ascending order:
+	for (int i = 0; i<10; i++)
+	{
+		for (int j = i + 1; j<10; j++)
+		{
+			//if array element 1 is greater than array element 2 than swap these numbers
+			if (arr[i]>arr[j])
+			{
+
+				temp = arr[i];
+
+				arr[i] = arr[j];
+
+				arr[j] = temp;
+
+			}
+		}
+	}
+
+
+	//Print the sorted array:
+	cout << "\nSorted Array in Ascending Order:\n";
+
+	for (int i = 0; i<10; i++)
+	{
+		cout << arr[i];
+
+		cout << endl;
+	}
+}
+int main()
+{
+	int arr[10];
+
+	//take input of array from user:
+	for (int i = 0; i<10; i++)
+	{
+		cout << "Enter Element " << i + 1 << ": ";
+		cin >> arr[i];
+
+	}
+
+	//Call Array_Sort function which prints sorted array:
+	Array_Sort(arr);
+	cout << "\n";
+
+	system("pause");
+
+	return 0;
+}
+///////////////////////////////////////////////////////////
+//////////////      TASK_03         //////////////////////
+/////////////////////////////////////////////////////////
+#include <iostream>
+using namespace std;
+
+//create a structure of Student to which have student info :
+struct  student
+{
+	int age, stdID;
+
+	char name[30];
+
+};
+
+int main() {
+
+	// create an object of student :
+	student std;
+
+	//take input of student id,name & age using structure:
+	cout << "Enter Student Full name : ";
+	cin.get(std.name, 30);
+
+	cout << "Enter Student ID : ";
+	cin >> std.stdID;
+
+	cout << "Enter Student age : ";
+	cin >> std.age;
+
+	//Print student Information :
+	cout << "\nFull Information of Student: " << endl;
+
+	cout << "\nID: " << std.stdID << endl;
+
+	cout << "Name: " << std.name << endl;
+
+	cout << "Age: " << std.age << "\n\n";
+
+	system("pause");
+
+	return 0;
+}
+
+///////////////////////////////////////////////////////////
+//////////////      TASK_04         //////////////////////
+/////////////////////////////////////////////////////////
+#include <iostream>
+using namespace std;
+
+//create a structure of Student to which have student info :
+
+struct  student
+{
+	int age, stdID;
+
+	char name[30];
+
+};
+
+int main() {
+
+	// create an object of student :
+
+	student *ptr, std;
+
+	//saves the object of student in ptr:
+	ptr = &std;
+	cout << "Enter Student Full name : ";
+	cin.get((*ptr).name, 30);
+
+	cout << "Enter Student ID : ";
+	cin >> (*ptr).stdID;
+
+	cout << "Enter Student age : ";
+	cin >> (*ptr).age;
+
+	cout << "\nFull Information of Student: " << endl;
+
+	cout << "\nID: " << (*ptr).stdID << endl;
+
+	cout << "Name: " << (*ptr).name << endl;
+
+	cout << "Age: " << (*ptr).age << "\n\n";
+
+	system("pause");
+
+	return 0;
+}
